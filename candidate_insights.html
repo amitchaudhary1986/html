@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Insights</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -13,12 +14,12 @@
     </header>
     <section id="engagement-metrics">
         <h2>Engagement Metrics</h2>
-        <div class="modern-chart-placeholder">Modern Line Chart: Interviews Started (Sample: 150, 180, 220) vs. Completed (Sample: 120, 150, 190)</div>
+        <div class="chart-container"><canvas id="interviewsChart"></canvas></div>
         <div class="flex-container">
             <div class="flex-item metric-card"><span class="metric-title">Average Time per Interview</span><span class="metric-value">12m 15s</span></div>
             <div class="flex-item metric-card"><span class="metric-title">Drop-off Rate (Platform-wide)</span><span class="metric-value">22% <span class="trend-arrow up">↑</span></span></div>
         </div>
-        <div class="modern-chart-placeholder">Modern Bar Chart/Heatmap: Peak Activity (Sample: Mon- busiest, 2-4 PM peak)</div>
+        <div class="chart-container"><canvas id="peakActivityChart"></canvas></div>
     </section>
     <section id="progress-funnel">
         <h2>Candidate Progress Funnel</h2>
@@ -52,15 +53,8 @@
     <section id="demographics-devices">
         <h2>Candidate Demographics & Devices</h2>
         <div class="modern-map-placeholder">Modern Heatmap: Global Candidate Distribution (Sample: High concentration in North America, Europe, South Asia)</div>
-        <div class="modern-chart-placeholder list-style-chart">
-            <div class="chart-title">Device / Platform Usage</div>
-            <ul class="bar-chart-list">
-                <li>Web: <span class="bar-value">60%</span></li>
-                <li>Android: <span class="bar-value">25%</span></li>
-                <li>iOS: <span class="bar-value">15%</span></li>
-            </ul>
-        </div>
-        <div class="modern-chart-placeholder">Modern Compact Line/Bar Chart: Interview Duration Distribution (Sample: Most interviews 10-15 mins)</div>
+        <div class="chart-container"><canvas id="deviceUsageChart"></canvas></div>
+        <div class="chart-container"><canvas id="durationDistributionChart"></canvas></div>
     </section>
     <section id="platform-usage">
         <h2>Platform Usage Metrics</h2>
@@ -93,5 +87,6 @@
         </div>
         <div class="modern-chart-placeholder">Modern Line Graph: Weekly Platform Usage (Sample: Upward trend over last 8 weeks)</div>
     </section>
+    <script src="charts.js"></script>
 </body>
 </html>
